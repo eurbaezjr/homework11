@@ -14,5 +14,9 @@
     "mysql": "^2.16.0"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": "12.13.0"
+    "npm": "6.12.0"
+  }
 }
