@@ -26,10 +26,15 @@ var saveNote = function(note) {
 
 // A function for deleting a note from the db
 var deleteNote = function(id) {
-  return $.ajax({
-    url: "api/notes/" + id,
-    method: "DELETE"
-  });
+  return $.ajax("/api/notes/" + id, {
+    type: "DELETE"
+  }).then(
+    function() {
+      console.log("deleted id ", id);
+      // Reload the page to get the updated list
+      location.reload();
+    }
+  );
 };
 
 // If there is an activeNote, display it, otherwise render empty inputs
